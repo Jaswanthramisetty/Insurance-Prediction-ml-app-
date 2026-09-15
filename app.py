@@ -68,16 +68,17 @@ ud = {j:all_ans[i] for i,j in enumerate(X.columns)}
 user_df = pd.DataFrame(ud, index = [1])
 st.write(user_df)
 
-# ======================Prediction===================
+#=========================Prediction==============
 if st.button("Click to Predict: "):
-  with st.spinner("predicting..."):
+  with st.spinner("Predicting.."):
     import time
     time.sleep(2)
-  final_ans = model.predict(all_ans)[0]
+  final_ans = model.predict([all_ans])[0]
   if final_ans == 0:
     st.info("❌Customer will not Buy the Insurance❌")
   else:
-    st.success("✅️Customer will Buy the Insurance✅️")
+    st.success("✅Customer will buy the Insurance✅")
+
 
 
 
